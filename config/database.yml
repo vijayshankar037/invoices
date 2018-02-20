@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: Invoices_production
-  username: Invoices
-  password: <%= ENV['INVOICES_DATABASE_PASSWORD'] %>
+  database: <%= ENV['RDS_DATABASE_NAME'] %>
+  username: <%= ENV['RDS_DATABASE_USER'] %>
+  password: <%= ENV['RDS_DATABASE_PASSWORD'] %>
+  host: <%= ENV['RDS_DATABASE_HOST'] %>
