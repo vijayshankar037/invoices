@@ -13,13 +13,13 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: <%= ENV['DATABASE_USER'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
   database: Invoices_development
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -53,3 +53,4 @@ production:
   username: <%= ENV['RDS_DATABASE_USER'] %>
   password: <%= ENV['RDS_DATABASE_PASSWORD'] %>
   host: <%= ENV['RDS_DATABASE_HOST'] %>
+  port: <%= ENV['RDS_DATABASE_POST'] %>
